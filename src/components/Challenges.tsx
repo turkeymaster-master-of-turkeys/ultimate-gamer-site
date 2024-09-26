@@ -16,10 +16,10 @@ const Challenges = () => {
             <div>
               {challenge}
             </div>
-              <RxCross2 onClick={() => {
+              <RxCross2 onClick={async () => {
                 const newSuggestions = [...challenges]
                 newSuggestions.splice(i, 1)
-                saveChallenges(newSuggestions)
+                await saveChallenges(newSuggestions)
               }}/>
           </div>
         )}

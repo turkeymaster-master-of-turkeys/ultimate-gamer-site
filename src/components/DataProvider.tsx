@@ -6,9 +6,9 @@ export type DataProviderProps = {
 };
 
 const DataContext = createContext({
-  reload: () => {},
-  saveSuggestions: (suggestions: string[]) => {},
-  saveChallenges: (challenges: string[]) => {},
+  reload: async () => {},
+  saveSuggestions: async (suggestions: string[]) => {},
+  saveChallenges: async (challenges: string[]) => {},
   suggestions: [] as string[],
   challenges: [] as string[]
 });
@@ -22,7 +22,7 @@ const DataProvider = ({children}: DataProviderProps) => {
     reload()
   }, []);
 
-  const proxy = "http://localhost:8000"
+  const proxy = "http://34.171.106.35:8000"
 
   const reload = async () => {
     axios.get(`${proxy}/challenges`)

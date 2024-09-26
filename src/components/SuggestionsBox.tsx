@@ -7,7 +7,7 @@ import { IoCheckmarkSharp } from "react-icons/io5";
 
 const SuggestionsBox = () => {
 
-  const {suggestions, saveSuggestions, challenges, saveChallenges} = useData();
+  const {reload, suggestions, saveSuggestions, challenges, saveChallenges} = useData();
   const [suggestion, setSuggestion] = useState('')
 
   return (
@@ -39,8 +39,9 @@ const SuggestionsBox = () => {
         />
         <button
           style={styles.button}
-          onClick={() => {
-            saveSuggestions([...suggestions, suggestion])
+          onClick={async () => {
+            await reload()
+            await saveSuggestions([...suggestions, suggestion])
             setSuggestion('')
           }}
         >
@@ -54,16 +55,16 @@ const SuggestionsBox = () => {
               {suggestion}
             </div>
             <div>
-              <IoCheckmarkSharp onClick={() => {
-                saveChallenges([...challenges, suggestion])
+              <IoCheckmarkSharp onClick={async () => {
+                await saveChallenges([...challenges, suggestion])
                 const newSuggestions = [...suggestions]
                 newSuggestions.splice(i, 1)
-                saveSuggestions(newSuggestions)
+                await saveSuggestions(newSuggestions)
               }} />
-              <RxCross2 onClick={() => {
+              <RxCross2 onClick={async () => {
                 const newSuggestions = [...suggestions]
                 newSuggestions.splice(i, 1)
-                saveSuggestions(newSuggestions)
+                await saveSuggestions(newSuggestions)
               }}/>
             </div>
           </div>
