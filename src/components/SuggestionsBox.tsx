@@ -41,6 +41,7 @@ const SuggestionsBox = () => {
           style={styles.button}
           onClick={() => {
             saveSuggestions([...suggestions, suggestion])
+            setSuggestion('')
           }}
         >
           Add
