@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/gamer-tournament.iml" filepath="$PROJECT_DIR$/.idea/gamer-tournament.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../gamer-tournament-backend/.idea/gamer-tournament-backend.iml" filepath="$PROJECT_DIR$/../gamer-tournament-backend/.idea/gamer-tournament-backend.iml" />
     </modules>
   </component>
 </project>
