@@ -36,3 +36,37 @@ export const challengeList: CSSProperties = {
   border: `2px solid ${highlight}`,
   padding: 12,
 }
+
+export const guidelines: CSSProperties = {
+  fontSize: 12,
+  marginBottom: 12,
+  marginLeft: 8,
+}
+
+export const input: CSSProperties = {
+  fontSize: 16,
+  padding: 8,
+  border: `2px solid ${highlight}`,
+  borderRadius: 8,
+  flex: 1,
+}
+
+export const button: CSSProperties = {
+  fontSize: 16,
+  padding: 8,
+  paddingLeft: 16,
+  paddingRight: 16,
+  border: `0px`,
+  backgroundColor: highlight,
+  borderRadius: 12,
+  color: primary,
+  marginLeft: 8,
+}
+
+export const suggestion: CSSProperties = {
+  fontSize: 16,
+  marginBottom: 4,
+  justifyContent: 'space-between',
+  width: '100%',
+  ...flexRow,
+}
