@@ -10,9 +10,11 @@ const Challenges = () => {
         Challenges
       </div>
       <div style={styles.challengeList}>
-        {challenges.map(challenge => <div>
-          {challenge}
-        </div>)}
+        {challenges.map(challenge =>
+          <div>
+            {challenge}
+          </div>
+        )}
       </div>
     </div>
   );
