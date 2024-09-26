@@ -1,16 +1,23 @@
 import React from 'react';
 import * as styles from "../styles";
+import {useData} from "./DataProvider";
 
-type SuggestionsBoxProps = {
-  suggestions: string[]
-}
+const SuggestionsBox = () => {
 
-const SuggestionsBox = ({ suggestions }: SuggestionsBoxProps) => {
+  const {suggestions} = useData();
+
   return (
-    <div style={styles.suggestionsBox}>
-      {suggestions.map(suggestion => <div>
-        {suggestion}
-      </div>)}
+    <div style={styles.suggestions}>
+      <div style={{marginBottom: 12, marginLeft: 8}}>
+        Suggestions
+      </div>
+      <div style={styles.suggestionsBox}>
+        {suggestions.map(suggestion =>
+          <div>
+            {suggestion}
+          </div>
+        )}
+      </div>
     </div>
   );
 };

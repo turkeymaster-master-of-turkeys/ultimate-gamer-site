@@ -10,21 +10,29 @@ export const bg: CSSProperties = {
   width: '100%',
 }
 
-export const suggestionsBox: CSSProperties = {
-  borderRadius: 16,
+export const suggestions: CSSProperties = {
   margin: 12,
   padding: 12,
   fontSize: 24,
   flex: 1,
-  border: `2px dashed ${highlight}`
+}
+
+export const suggestionsBox: CSSProperties = {
+  borderRadius: 16,
+  fontSize: 20,
+  border: `2px dashed ${highlight}`,
+  padding: 12,
 }
 
 export const flexRow: CSSProperties = {
   display: 'flex',
-  flexDirection: 'row'
+  flexDirection: 'row',
+  width: '100%',
 }
 
 export const challengeList: CSSProperties = {
-  display: 'flex',
-  flexDirection: 'column',
+  borderRadius: 16,
+  fontSize: 20,
+  border: `2px solid ${highlight}`,
+  padding: 12,
 }

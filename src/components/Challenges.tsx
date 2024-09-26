@@ -1,16 +1,19 @@
 import React from 'react';
 import * as styles from "../styles";
+import {useData} from "./DataProvider";
 
-type ChallengesProps = {
-  challenges: string[]
-}
-
-const Challenges = ({ challenges }: ChallengesProps) => {
+const Challenges = () => {
+  const {challenges} = useData()
   return (
-    <div style={styles.challengeList}>
-      {challenges.map(challenge => <div>
-        {challenge}
-      </div>)}
+    <div style={styles.suggestions}>
+      <div style={{marginBottom: 12, marginLeft: 8}}>
+        Challenges
+      </div>
+      <div style={styles.challengeList}>
+        {challenges.map(challenge => <div>
+          {challenge}
+        </div>)}
+      </div>
     </div>
   );
 };
