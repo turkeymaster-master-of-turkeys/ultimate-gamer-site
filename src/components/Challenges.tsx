@@ -10,6 +10,11 @@ const Challenges = () => {
       <div style={{marginBottom: 12, marginLeft: 8}}>
         Challenges
       </div>
+      <a href={"/wheel"}>
+        <button style={styles.buttonWide}>
+          Go to Wheel {">"}
+        </button>
+      </a>
       <div style={styles.challengeList}>
         {challenges.map((challenge, i) =>
           <div style={styles.suggestion}>

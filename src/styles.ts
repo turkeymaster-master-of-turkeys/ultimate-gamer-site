@@ -1,7 +1,7 @@
 import {CSSProperties} from "react";
 
-const primary = '#f0ebf8'
-const highlight = '#6e2ed5'
+const primary = '#fbdcbf'
+const highlight = '#9c4c43'
 
 export const bg: CSSProperties = {
   backgroundColor: primary,
@@ -61,6 +61,14 @@ export const button: CSSProperties = {
   borderRadius: 12,
   color: primary,
   marginLeft: 8,
+  cursor: 'pointer',
+}
+
+export const buttonWide: CSSProperties = {
+  ...button,
+  marginBottom: 8,
+  width: "100%",
+  marginLeft: 0
 }
 
 export const suggestion: CSSProperties = {

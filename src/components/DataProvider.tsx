@@ -22,7 +22,7 @@ const DataProvider = ({children}: DataProviderProps) => {
     reload()
   }, []);
 
-  const proxy = "http://34.171.106.35:8000"
+  const proxy = "http://localhost:8000"
 
   const reload = async () => {
     axios.get(`${proxy}/challenges`)
