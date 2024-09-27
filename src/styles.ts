@@ -49,6 +49,8 @@ export const input: CSSProperties = {
   border: `2px solid ${highlight}`,
   borderRadius: 8,
   flex: 1,
+  backgroundColor: primary,
+  outline: 'none',
 }
 
 export const button: CSSProperties = {
@@ -77,4 +79,17 @@ export const suggestion: CSSProperties = {
   justifyContent: 'space-between',
   width: '100%',
   ...flexRow,
+}
+
+export const displayPrize: CSSProperties = {
+  position: 'absolute',
+  top: 200,
+  zIndex: 6,
+  backgroundColor: "#ffe5e5",
+  color: "#451313",
+  padding: 16,
+  borderRadius: 16,
+  fontSize: 24,
+  border: "4px solid " + highlight,
+  cursor: "pointer",
 }
