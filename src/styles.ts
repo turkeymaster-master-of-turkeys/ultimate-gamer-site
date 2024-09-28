@@ -101,3 +101,8 @@ export const divider: CSSProperties = {
   borderBottom: `2px solid ${highlight}`,
   marginBottom: 12,
 }
+
+export const checkBox: CSSProperties = {
+  cursor: "pointer",
+  marginLeft: "10px",
+}

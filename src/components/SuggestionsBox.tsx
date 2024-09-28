@@ -54,13 +54,13 @@ const SuggestionsBox = () => {
               {suggestion}
             </div>
             <div>
-              <IoCheckmarkSharp onClick={async () => {
+              <IoCheckmarkSharp style={styles.checkBox} onClick={async () => {
                 await saveChallenges([...challenges, suggestion])
                 const newSuggestions = [...suggestions]
                 newSuggestions.splice(i, 1)
                 await saveSuggestions(newSuggestions)
               }} />
-              <RxCross2 onClick={async () => {
+              <RxCross2 style={styles.checkBox} onClick={async () => {
                 const newSuggestions = [...suggestions]
                 newSuggestions.splice(i, 1)
                 await saveSuggestions(newSuggestions)
