@@ -15,21 +15,19 @@ const root = ReactDOM.createRoot(
   document.getElementById('root')  as HTMLElement
 );
 root.render(
-  <React.StrictMode>
-    <DataProvider>
-      <AuthProvider>
-        <NavBar>
-          <BrowserRouter>
-            <Routes>
-              <Route index path={'/challenges'} element={<ChallengePage />}/>
-              <Route path={'/wheel'} element={<WheelPage />}/>
-              <Route path={'/leaderboard'} element={<LeaderboardPage />}/>
-              <Route path={'/auth/callback'} element={<Callback />}/>
-              <Route path={'*'} element={<DefaultPage />}/>
-            </Routes>
-          </BrowserRouter>
-        </NavBar>
-      </AuthProvider>
-    </DataProvider>
-  </React.StrictMode>
+  <DataProvider>
+    <AuthProvider>
+      <NavBar>
+        <BrowserRouter>
+          <Routes>
+            <Route index path={'/challenges'} element={<ChallengePage />}/>
+            <Route path={'/wheel'} element={<WheelPage />}/>
+            <Route path={'/leaderboard'} element={<LeaderboardPage />}/>
+            <Route path={'/auth/callback'} element={<Callback />}/>
+            <Route path={'*'} element={<DefaultPage />}/>
+          </Routes>
+        </BrowserRouter>
+      </NavBar>
+    </AuthProvider>
+  </DataProvider>
 );

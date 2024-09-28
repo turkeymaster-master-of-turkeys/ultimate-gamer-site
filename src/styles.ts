@@ -101,11 +101,19 @@ export const divider: CSSProperties = {
   marginBottom: 12,
 }
 
+export const centerBox: CSSProperties = {
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  position: "absolute",
+  width: "100%",
+  height: "100%",
+  top: 0,
+  left: 0,
+}
+
 export const dialog: CSSProperties = {
   position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
   zIndex: 6,
   backgroundColor: primaryLight,
   padding: 16,

@@ -1,7 +1,7 @@
 import {
   DragDropContext,
   Draggable,
-  DraggableProvided,
+  DraggableProvided, DraggableStateSnapshot,
   Droppable,
   DroppableProvided,
   DropResult
@@ -27,31 +27,32 @@ const DragDropList = ({ items, setItems }: DragDropListProps) => {
       <DragDropContext onDragEnd={onDragEnd}>
         <Droppable droppableId="droppable">
           {(provided: DroppableProvided) => (
-            <ul
+            <div
               {...provided.droppableProps}
               ref={provided.innerRef}
-              style={{listStyleType: 'none', padding: 0}}
+              style={{padding: 0}}
             >
               {items.map((item, index) => (
                 <Draggable key={item.id} draggableId={item.id} index={index}>
-                  {(provided: DraggableProvided) => (
-                    <li
+                  {(provided: DraggableProvided, snapshot: DraggableStateSnapshot) => (
+                    <div
                       ref={provided.innerRef}
                       {...provided.draggableProps}
                       {...provided.dragHandleProps}
                       style={{
-                        ...styles.button,
                         marginBottom: 4,
+                        ...styles.button,
                         ...provided.draggableProps.style,
                       }}
+                      key={item.id}
                     >
                       {item.content}
-                    </li>
+                    </div>
                   )}
                 </Draggable>
               ))}
-              {provided.placeholder} {/* This keeps space for the dragging item */}
-            </ul>
+              {provided.placeholder}
+            </div>
           )}
         </Droppable>
       </DragDropContext>);

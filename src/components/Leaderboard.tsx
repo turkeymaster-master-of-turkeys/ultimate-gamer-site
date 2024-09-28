@@ -17,7 +17,7 @@ const Leaderboard = () => {
         </div>
         <div style={styles.divider}/>
         <ol>
-          {ranking.map(user => <li>
+          {ranking.map((user, i) => <li key={i}>
             <div style={{...styles.flexRow, marginBottom: 12, justifyContent: "space-between"}}>
               <div>{user}</div>
               <div>{userScores[user]}</div>

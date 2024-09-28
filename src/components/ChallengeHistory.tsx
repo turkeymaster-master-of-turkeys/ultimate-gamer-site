@@ -22,7 +22,7 @@ const ChallengeHistory = () => {
             </div>
             <ol>
               {completedChallenge.ranking.map((user, i) =>
-                <li>
+                <li key={i}>
                   {user}
                 </li>)}
             </ol>

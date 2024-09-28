@@ -49,7 +49,7 @@ const SuggestionsBox = () => {
       </div>
       <div style={styles.suggestionsBox}>
         {suggestions.map((suggestion, i) =>
-          <div style={styles.suggestion}>
+          <div style={styles.suggestion} key={i}>
             <div>
               {suggestion}
             </div>

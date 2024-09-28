@@ -6,15 +6,11 @@ import {IoCheckmarkSharp} from "react-icons/io5";
 import DragDropList from "./dragDropList";
 
 const Challenges = () => {
-  const {challenges, saveChallenges, saveHistory} = useData()
+  const {challenges, saveChallenges, history, saveHistory} = useData()
   const [finishChallengeDialogueNum, setFinishChallengeDialogueNum] = useState(-1)
-  const [ranking, setRanking] = useState([
-    {id: '1', content: 'Item 1'},
-    {id: '2', content: 'Item 2'},
-    {id: '3', content: 'Item 3'},
-    {id: '4', content: 'Item 4'},
-    {id: '5', content: 'Item 5'},
-  ])
+  const initialRanking = ['Turkeymaster', 'llambda', 'Wacko', 'oozer']
+    .map((name, i) => ({id: i.toString(), content: name}))
+  const [ranking, setRanking] = useState(initialRanking)
 
   return (
     <div style={styles.suggestions}>
@@ -23,15 +19,15 @@ const Challenges = () => {
       </div>
       <div style={styles.challengeList}>
         {challenges.map((challenge, i) =>
-          <div style={styles.suggestion}>
+          <div style={styles.suggestion} key={i}>
             <div>
               {challenge}
             </div>
             <div>
-              <IoCheckmarkSharp onClick={async () => {
+              <IoCheckmarkSharp style={styles.checkBox} onClick={async () => {
                 setFinishChallengeDialogueNum(i)
               }}/>
-              <RxCross2 onClick={async () => {
+              <RxCross2 style={styles.checkBox} onClick={async () => {
                 const newSuggestions = [...challenges]
                 newSuggestions.splice(i, 1)
                 await saveChallenges(newSuggestions)
@@ -40,8 +36,8 @@ const Challenges = () => {
           </div>
         )}
       </div>
-      {finishChallengeDialogueNum !== -1 &&
-        <div style={styles.dialog}>
+      <div style={{...styles.centerBox, visibility: finishChallengeDialogueNum !== -1 ? 'visible' : 'hidden'}}>
+        <div style={{...styles.dialog}}>
           <div>
             Complete: "{challenges[finishChallengeDialogueNum]}"?
           </div>
@@ -51,20 +47,28 @@ const Challenges = () => {
           <DragDropList items={ranking} setItems={setRanking}/>
           <div style={{...styles.flexRow, justifyContent: "space-between"}}>
             <button style={styles.button} onClick={() => {
-              setRanking([])
               setFinishChallengeDialogueNum(-1)
+              saveHistory([...history, {
+                name: challenges[finishChallengeDialogueNum],
+                date: Math.floor(Date.now() / 1000),
+                ranking: ranking.map(({content}) => content)
+              }]).then(() => {
+                const newChallenges = [...challenges]
+                newChallenges.splice(finishChallengeDialogueNum, 1)
+                saveChallenges(newChallenges).then(() => setRanking(initialRanking))
+              })
             }}>
               Ok
             </button>
             <button style={styles.button} onClick={() => {
               setFinishChallengeDialogueNum(-1)
-              setRanking([])
+              setRanking(initialRanking)
             }}>
               Cancel
             </button>
           </div>
         </div>
-      }
+      </div>
     </div>
   );
 };
