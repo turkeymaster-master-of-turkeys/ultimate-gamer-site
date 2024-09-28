@@ -65,7 +65,6 @@ export const button: CSSProperties = {
   backgroundColor: highlight,
   borderRadius: 12,
   color: primary,
-  marginLeft: 8,
   cursor: 'pointer',
 }
 
@@ -100,4 +99,21 @@ export const displayPrize: CSSProperties = {
 export const divider: CSSProperties = {
   borderBottom: `2px solid ${highlight}`,
   marginBottom: 12,
+}
+
+export const dialog: CSSProperties = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  zIndex: 6,
+  backgroundColor: primaryLight,
+  padding: 16,
+  borderRadius: 16,
+  fontSize: 24,
+  border: "4px solid " + highlight,
+  display: "flex",
+  flexDirection: "column",
+  gap: 8,
+  minWidth: 500,
 }

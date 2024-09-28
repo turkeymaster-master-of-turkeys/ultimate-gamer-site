@@ -37,7 +37,7 @@ const SuggestionsBox = () => {
           onChange={e => setSuggestion(e.target.value)}
         />
         <button
-          style={styles.button}
+          style={{...styles.button, marginLeft: 8}}
           onClick={async () => {
             await reload()
             await saveSuggestions([...suggestions, suggestion])
