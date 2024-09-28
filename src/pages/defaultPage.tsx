@@ -4,23 +4,6 @@ import * as styles from "../styles";
 const DefaultPage = () => {
   return (
     <div style={{...styles.bg, flexDirection: "column", alignItems: "center"}}>
-      <div style={{position: "absolute", top: 40, zIndex: 1, gap: 8, display: "flex", flexDirection: "row"}}>
-        <a href={"/challenges"} style={{width: 400}}>
-          <button style={styles.buttonWide}>
-            Challenges {">"}
-          </button>
-        </a>
-        <a href={"/wheel"} style={{width: 400}}>
-          <button style={styles.buttonWide}>
-            Wheel {">"}
-          </button>
-        </a>
-        <a href={"/leaderboard"} style={{width: 400}}>
-          <button style={styles.buttonWide}>
-            Leaderboard {">"}
-          </button>
-        </a>
-      </div>
       <img
         src={"/ultimate-gamer.png"}
         alt={"Ultimate Gamer"}

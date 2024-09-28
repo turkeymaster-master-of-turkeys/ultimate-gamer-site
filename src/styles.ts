@@ -1,8 +1,8 @@
 import {CSSProperties} from "react";
 
-const primary = '#fbdcbf'
-const primaryLight = '#ffe7ce'
-const highlight = '#9c4c43'
+export const primary = '#fbdcbf'
+export const primaryLight = '#ffe7ce'
+export const highlight = '#9c4c43'
 
 export const bg: CSSProperties = {
   backgroundColor: primary,

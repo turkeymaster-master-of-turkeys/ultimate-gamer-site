@@ -6,13 +6,11 @@ import Leaderboard from "../components/Leaderboard";
 
 const LeaderboardPage = () => {
   return (
-    <div style={styles.bg}>
-      <div style={styles.flexRow}>
-        <ChallengeHistory />
-        <div style={{flex: 1, display: "flex", flexDirection: "column"}}>
-          <Leaderboard />
-          <Podium />
-        </div>
+    <div style={styles.flexRow}>
+      <ChallengeHistory />
+      <div style={{flex: 1, display: "flex", flexDirection: "column"}}>
+        <Leaderboard />
+        <Podium />
       </div>
     </div>
   );

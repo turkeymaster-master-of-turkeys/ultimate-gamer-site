@@ -5,11 +5,9 @@ import SuggestionsBox from "../components/SuggestionsBox";
 
 const ChallengePage = () => {
   return (
-    <div style={styles.bg}>
-      <div style={styles.flexRow}>
-        <SuggestionsBox />
-        <Challenges />
-      </div>
+    <div style={styles.flexRow}>
+      <SuggestionsBox />
+      <Challenges />
     </div>
   );
 };

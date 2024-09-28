@@ -28,38 +28,36 @@ const WheelPage = () => {
   }
 
   return (
-    <div style={styles.bg}>
-      <div style={{display: "flex", flexDirection: "column", alignItems: "center", width: "100%", alignSelf: "center"}}>
-        <div style={{fontSize: 32, marginBottom: 8, fontWeight: 600}}>
-          Spin the Wheel!
-        </div>
-        {displayPrize && <div
-          style={styles.displayPrize}
-          onClick={() => setDisplayPrize(false)}
-        >
-          {challenges[prizeNumber]}
-        </div>}
-        <div onClick={handleSpinClick} style={{cursor: "pointer"}}>
-          {data.length > 0 ?
-            <Wheel
-              mustStartSpinning={spin}
-              prizeNumber={prizeNumber}
-              data={data}
-              onStopSpinning={onSpinEnd}
-              fontSize={12}
-              textDistance={50}
-              radiusLineWidth={1}
-            /> :
-            <div>No challenges found</div>
-          }
-        </div>
-        <div>
-          <a href={"/challenges"} style={{width: 400}}>
-            <button style={styles.buttonWide}>
-              Go to Challenges {">"}
-            </button>
-          </a>
-        </div>
+    <div style={{display: "flex", flexDirection: "column", alignItems: "center", width: "100%", alignSelf: "center"}}>
+      <div style={{fontSize: 32, marginBottom: 8, fontWeight: 600}}>
+        Spin the Wheel!
+      </div>
+      {displayPrize && <div
+        style={styles.displayPrize}
+        onClick={() => setDisplayPrize(false)}
+      >
+        {challenges[prizeNumber]}
+      </div>}
+      <div onClick={handleSpinClick} style={{cursor: "pointer"}}>
+        {data.length > 0 ?
+          <Wheel
+            mustStartSpinning={spin}
+            prizeNumber={prizeNumber}
+            data={data}
+            onStopSpinning={onSpinEnd}
+            fontSize={12}
+            textDistance={50}
+            radiusLineWidth={1}
+          /> :
+          <div>No challenges found</div>
+        }
+      </div>
+      <div>
+        <a href={"/challenges"} style={{width: 400}}>
+          <button style={styles.buttonWide}>
+            Go to Challenges {">"}
+          </button>
+        </a>
       </div>
     </div>
   );

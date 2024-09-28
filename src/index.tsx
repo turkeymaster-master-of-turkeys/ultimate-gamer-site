@@ -7,6 +7,7 @@ import ChallengePage from './pages/challenges';
 import DefaultPage from "./pages/defaultPage";
 import WheelPage from "./pages/wheel";
 import LeaderboardPage from "./pages/leaderboardPage";
+import NavBar from "./components/NavBar";
 
 const root = ReactDOM.createRoot(
   document.getElementById('root')  as HTMLElement
@@ -14,14 +15,16 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <DataProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route index path={'/challenges'} element={<ChallengePage />}/>
-          <Route path={'/wheel'} element={<WheelPage />}/>
-          <Route path={'/leaderboard'} element={<LeaderboardPage />}/>
-          <Route path={'*'} element={<DefaultPage />}/>
-        </Routes>
-      </BrowserRouter>
+      <NavBar>
+        <BrowserRouter>
+          <Routes>
+            <Route index path={'/challenges'} element={<ChallengePage />}/>
+            <Route path={'/wheel'} element={<WheelPage />}/>
+            <Route path={'/leaderboard'} element={<LeaderboardPage />}/>
+            <Route path={'*'} element={<DefaultPage />}/>
+          </Routes>
+        </BrowserRouter>
+      </NavBar>
     </DataProvider>
   </React.StrictMode>
 );
