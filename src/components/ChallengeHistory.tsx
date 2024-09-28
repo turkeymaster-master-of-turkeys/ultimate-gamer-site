@@ -5,19 +5,27 @@ import {useData} from "./DataProvider";
 const ChallengeHistory = () => {
   const { history } = useData()
   return (
-    <div style={styles.suggestions}>
+    <div style={{...styles.suggestions}}>
       <div style={{marginBottom: 12, marginLeft: 8}}>
         Challenge History
       </div>
-      <div style={styles.challengeList}>
+      <div style={{...styles.challengeList}}>
         {history.map((completedChallenge, i) => <div>
-          <div style={{...styles.flexRow, justifyContent: "space-between"}}>
-            <div>
-              {completedChallenge.name}
+          <div style={{...styles.suggestionsBox, marginBottom: 12}}>
+            <div style={{...styles.flexRow, justifyContent: "space-between"}}>
+              <div>
+                {completedChallenge.name}
+              </div>
+              <div style={{fontSize: 16, color: "#444"}}>
+                {(new Date(completedChallenge.date * 1000)).toLocaleDateString()}
+              </div>
             </div>
-            <div style={{fontSize: 16, color: "#444"}}>
-              {(new Date(completedChallenge.date * 1000)).toLocaleDateString()}
-            </div>
+            <ol>
+              {completedChallenge.ranking.map((user, i) =>
+                <li>
+                  {user}
+                </li>)}
+            </ol>
           </div>
         </div>)}
       </div>
