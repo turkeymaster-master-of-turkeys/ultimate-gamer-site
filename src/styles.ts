@@ -1,6 +1,7 @@
 import {CSSProperties} from "react";
 
 const primary = '#fbdcbf'
+const primaryLight = '#ffe7ce'
 const highlight = '#9c4c43'
 
 export const bg: CSSProperties = {
@@ -22,6 +23,7 @@ export const suggestionsBox: CSSProperties = {
   fontSize: 20,
   border: `2px dashed ${highlight}`,
   padding: 12,
+  backgroundColor: primaryLight,
 }
 
 export const flexRow: CSSProperties = {
@@ -35,6 +37,7 @@ export const challengeList: CSSProperties = {
   fontSize: 20,
   border: `2px solid ${highlight}`,
   padding: 12,
+  backgroundColor: primaryLight,
 }
 
 export const guidelines: CSSProperties = {
@@ -49,7 +52,7 @@ export const input: CSSProperties = {
   border: `2px solid ${highlight}`,
   borderRadius: 8,
   flex: 1,
-  backgroundColor: primary,
+  backgroundColor: primaryLight,
   outline: 'none',
 }
 
@@ -92,4 +95,9 @@ export const displayPrize: CSSProperties = {
   fontSize: 24,
   border: "4px solid " + highlight,
   cursor: "pointer",
+}
+
+export const divider: CSSProperties = {
+  borderBottom: `2px solid ${highlight}`,
+  marginBottom: 12,
 }

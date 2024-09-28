@@ -12,7 +12,7 @@ const Challenges = () => {
       </div>
       <a href={"/wheel"}>
         <button style={styles.buttonWide}>
-          Go to Wheel {">"}
+          Wheel {">"}
         </button>
       </a>
       <div style={styles.challengeList}>

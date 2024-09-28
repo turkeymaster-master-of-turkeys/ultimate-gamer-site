@@ -1,0 +1,1 @@
+type userId = string

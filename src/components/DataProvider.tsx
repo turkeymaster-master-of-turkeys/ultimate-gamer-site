@@ -14,6 +14,7 @@ const DataContext = createContext({
   suggestions: [] as suggestion[],
   challenges: [] as suggestion[],
   history: [] as completedChallenge[],
+  userScores: {} as {[id: userId]: number}  ,
 });
 
 const DataProvider = ({children}: DataProviderProps) => {
@@ -58,10 +59,20 @@ const DataProvider = ({children}: DataProviderProps) => {
     setHistory(history)
   }
 
+  const userScores: {[id: userId]: number} = {}
+  history.forEach(completedChallenge => {
+    completedChallenge.ranking.forEach((userId, i) => {
+      if (userScores[userId] === undefined) {
+        userScores[userId] = 0
+      }
+      userScores[userId] += completedChallenge.ranking.length - i
+    })
+  })
+
   return (
     // The ConfigContext.Provider component will provide the authentication state and functions to all children
     <DataContext.Provider value={
-      { reload, suggestions, challenges, history, saveSuggestions, saveChallenges, saveHistory }
+      { reload, suggestions, challenges, history, saveSuggestions, saveChallenges, saveHistory, userScores }
     }>
       {children}
     </DataContext.Provider>
