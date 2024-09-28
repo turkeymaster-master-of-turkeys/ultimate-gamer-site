@@ -7,7 +7,7 @@ export const highlight = '#9c4c43'
 export const bg: CSSProperties = {
   backgroundColor: primary,
   display: 'flex',
-  minHeight: '100vh',
+  minHeight: 'calc(100vh - 70px)',
   width: '100%',
 }
 
@@ -88,7 +88,7 @@ export const displayPrize: CSSProperties = {
   position: 'absolute',
   top: 200,
   zIndex: 6,
-  backgroundColor: "#ffe5e5",
+  backgroundColor: primaryLight,
   color: "#451313",
   padding: 16,
   borderRadius: 16,

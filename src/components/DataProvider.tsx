@@ -70,7 +70,6 @@ const DataProvider = ({children}: DataProviderProps) => {
   })
 
   return (
-    // The ConfigContext.Provider component will provide the authentication state and functions to all children
     <DataContext.Provider value={
       { reload, suggestions, challenges, history, saveSuggestions, saveChallenges, saveHistory, userScores }
     }>
@@ -79,7 +78,6 @@ const DataProvider = ({children}: DataProviderProps) => {
   );
 };
 
-// The useAuth hook can be used to access the authentication state and functions
 export const useData = () => React.useContext(DataContext);
 
 export default DataProvider;
