@@ -7,12 +7,17 @@ const DefaultPage = () => {
       <div style={{position: "absolute", top: 40, zIndex: 1, gap: 8, display: "flex", flexDirection: "row"}}>
         <a href={"/challenges"} style={{width: 400}}>
           <button style={styles.buttonWide}>
-            Go to Challenges {">"}
+            Challenges {">"}
           </button>
         </a>
         <a href={"/wheel"} style={{width: 400}}>
           <button style={styles.buttonWide}>
-            Go to Wheel {">"}
+            Wheel {">"}
+          </button>
+        </a>
+        <a href={"/leaderboard"} style={{width: 400}}>
+          <button style={styles.buttonWide}>
+            Leaderboard {">"}
           </button>
         </a>
       </div>

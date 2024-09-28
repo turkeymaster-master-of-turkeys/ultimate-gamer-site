@@ -6,6 +6,7 @@ import DataProvider from "./components/DataProvider";
 import ChallengePage from './pages/challenges';
 import DefaultPage from "./pages/defaultPage";
 import WheelPage from "./pages/wheel";
+import Leaderboard from "./pages/leaderboard";
 
 const root = ReactDOM.createRoot(
   document.getElementById('root')  as HTMLElement
@@ -17,6 +18,7 @@ root.render(
         <Routes>
           <Route index path={'/challenges'} element={<ChallengePage />}/>
           <Route path={'/wheel'} element={<WheelPage />}/>
+          <Route path={'/leaderboard'} element={<Leaderboard />}/>
           <Route path={'*'} element={<DefaultPage />}/>
         </Routes>
       </BrowserRouter>

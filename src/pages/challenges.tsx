@@ -7,7 +7,7 @@ const ChallengePage = () => {
   return (
     <div style={styles.bg}>
       <div style={styles.flexRow}>
-        <SuggestionsBox/>
+        <SuggestionsBox />
         <Challenges />
       </div>
     </div>

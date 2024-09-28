@@ -1,14 +1,13 @@
 import React, {useState} from 'react';
 import * as styles from "../styles";
 import {useData} from "./DataProvider";
-// @ts-ignore
 import { RxCross2 } from "react-icons/rx";
 import { IoCheckmarkSharp } from "react-icons/io5";
 
 const SuggestionsBox = () => {
 
   const {reload, suggestions, saveSuggestions, challenges, saveChallenges} = useData();
-  const [suggestion, setSuggestion] = useState('')
+  const [suggestion, setSuggestion] = useState<suggestion>('')
 
   return (
     <div style={styles.suggestions}>
