@@ -117,3 +117,8 @@ export const dialog: CSSProperties = {
   gap: 8,
   minWidth: 500,
 }
+
+export const checkBox: CSSProperties = {
+  cursor: "pointer",
+  marginLeft: "10px",
+}
