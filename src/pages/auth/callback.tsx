@@ -1,14 +1,18 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import * as styles from '../../styles';
 import {useAuth} from "../../components/AuthProvider";
 
 const Callback = () => {
   const code = new URLSearchParams(window.location.search).get('code')
+  const [success, setSuccess] = useState(true)
   const { login, token, username } = useAuth()
   useEffect(() => {
-    if (code) {
-      login(code)
+    const fetchToken = async () => {
+      if (code) {
+        setSuccess(await login(code))
+      }
     }
+    fetchToken()
   }, [code, login]);
 
   if (!code) {
@@ -17,6 +21,14 @@ const Callback = () => {
         No code found. Please access this page though the login page.
       </div>
     )
+  }
+
+  if (!success) {
+    return (
+      <div style={styles.suggestions}>
+        Failed to log in. Please try again.
+      </div>
+    );
   }
 
   if (!token) {

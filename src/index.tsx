@@ -9,6 +9,7 @@ import WheelPage from "./pages/wheel";
 import LeaderboardPage from "./pages/leaderboardPage";
 import NavBar from "./components/NavBar";
 import Callback from "./pages/auth/callback";
+import AuthProvider from "./components/AuthProvider";
 
 const root = ReactDOM.createRoot(
   document.getElementById('root')  as HTMLElement
@@ -16,17 +17,19 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <DataProvider>
-      <NavBar>
-        <BrowserRouter>
-          <Routes>
-            <Route index path={'/challenges'} element={<ChallengePage />}/>
-            <Route path={'/wheel'} element={<WheelPage />}/>
-            <Route path={'/leaderboard'} element={<LeaderboardPage />}/>
-            <Route path={'/auth/callback'} element={<Callback />}/>
-            <Route path={'*'} element={<DefaultPage />}/>
-          </Routes>
-        </BrowserRouter>
-      </NavBar>
+      <AuthProvider>
+        <NavBar>
+          <BrowserRouter>
+            <Routes>
+              <Route index path={'/challenges'} element={<ChallengePage />}/>
+              <Route path={'/wheel'} element={<WheelPage />}/>
+              <Route path={'/leaderboard'} element={<LeaderboardPage />}/>
+              <Route path={'/auth/callback'} element={<Callback />}/>
+              <Route path={'*'} element={<DefaultPage />}/>
+            </Routes>
+          </BrowserRouter>
+        </NavBar>
+      </AuthProvider>
     </DataProvider>
   </React.StrictMode>
 );
