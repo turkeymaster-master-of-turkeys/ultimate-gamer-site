@@ -16,10 +16,16 @@ const WheelPage = () => {
   const [displayPrize, setDisplayPrize] = React.useState(false);
 
   const handleSpinClick = () => {
-    const newPrizeNumber = Math.floor(Math.random() * data.length);
-    setDisplayPrize(false);
-    setPrizeNumber(newPrizeNumber);
-    setSpin(true);
+    while (true) {
+      const newPrizeNumber = Math.floor(Math.random() * data.length);
+
+      if (!challenges[newPrizeNumber].toLowerCase().includes("sekiro")) {
+        setDisplayPrize(false);
+        setPrizeNumber(newPrizeNumber);
+        setSpin(true);
+        break;
+      }
+    }
   }
 
   const onSpinEnd = () => {
