@@ -16,15 +16,25 @@ const WheelPage = () => {
   const [displayPrize, setDisplayPrize] = React.useState(false);
 
   const handleSpinClick = () => {
-    while (true) {
-      const newPrizeNumber = Math.floor(Math.random() * data.length);
+    const riggedGames: string[] = ["seven hotties", "sealed with a demon's kiss"];
+    const maxAttempts = 5;
+    let attempts = 0;
 
-      if (!challenges[newPrizeNumber].toLowerCase().includes("sekiro")) {
+    while (attempts < maxAttempts) {
+      const newPrizeNumber = Math.floor(Math.random() * data.length);
+      const challenge = challenges[newPrizeNumber];
+
+      const rigged = riggedGames.some(game => challenge.toLowerCase().includes(game));
+      console.log(challenge, rigged);
+
+      if (attempts >= maxAttempts - 1 || rigged) {
         setDisplayPrize(false);
         setPrizeNumber(newPrizeNumber);
         setSpin(true);
         break;
       }
+
+      attempts++;
     }
   }
 
