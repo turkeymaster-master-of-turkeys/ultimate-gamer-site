@@ -25,7 +25,6 @@ const WheelPage = () => {
       const challenge = challenges[newPrizeNumber];
 
       const rigged = riggedGames.some(game => challenge.toLowerCase().includes(game));
-      console.log(challenge, rigged);
 
       if (attempts >= maxAttempts - 1 || rigged) {
         setDisplayPrize(false);
