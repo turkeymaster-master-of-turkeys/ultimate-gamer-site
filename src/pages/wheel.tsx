@@ -7,7 +7,7 @@ const WheelPage = () => {
   const { challenges } = useData();
   const data = challenges.map((challenge, i) => (
     {option: challenge, style: {
-      fontSize: Math.min(Math.round(350 / challenge.length), 16),
+      fontSize: Math.min(Math.round(250 / challenge.length), 11),
       backgroundColor: ["#a0d468", "#4fc1e9", "#ac92ec", "#ed5565", "#ffce54"][i % 5],
     }}
   ));
@@ -16,7 +16,7 @@ const WheelPage = () => {
   const [displayPrize, setDisplayPrize] = React.useState(false);
 
   const handleSpinClick = () => {
-    const riggedGames: string[] = ["seven hotties", "sealed with a demon's kiss"];
+    const riggedGames: string[] = ["seven hotties", "sealed with a demon's kiss", "yuri academy"];
     const maxAttempts = 5;
     let attempts = 0;
 
@@ -61,7 +61,7 @@ const WheelPage = () => {
             data={data}
             onStopSpinning={onSpinEnd}
             fontSize={12}
-            textDistance={50}
+            textDistance={58}
             radiusLineWidth={1}
           /> :
           <div>No challenges found</div>

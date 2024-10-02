@@ -27,7 +27,7 @@ const DataProvider = ({children}: DataProviderProps) => {
     reload()
   }, []);
 
-  const backend = "http://localhost:8000"
+  const backend = process.env.REACT_APP_BACKEND_URL
 
   const reload = async () => {
     axios.get(`${backend}/challenges`)
